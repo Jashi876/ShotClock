@@ -1,0 +1,22 @@
+<aside class="sidebar">
+  <div class="sidebar-nav">
+    <ul class="nav-list">
+      <li *ngFor="let item of navItems" class="nav-item">
+        <a [routerLink]="item.route" routerLinkActive="active" class="nav-link">
+          <span class="nav-icon">{{ item.icon }}</span>
+          <span class="nav-label">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="storage-info">
+      <div class="label">Storage Used</div>
+      <div class="progress-bar">
+        <div class="progress" style="width: 45%;"></div>
+      </div>
+      <div class="details">4.5 GB of 10 GB</div>
+    </div>
+  </div>
+</aside>

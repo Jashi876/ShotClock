@@ -1,0 +1,47 @@
+<div class="page-head" *ngIf="project">
+  <div class="title-area">
+    <a routerLink="/projects" class="back-link"><- Projects</a>
+    <h1>{{ project.name }}</h1>
+  </div>
+  <div class="actions">
+    <button class="btn-secondary">Edit</button>
+    <button class="btn-primary" routerLink="/schedules/generator">Generate Schedule</button>
+  </div>
+</div>
+
+<div class="details-grid" *ngIf="project">
+  <div class="main-info card">
+    <h3>Description</h3>
+    <p>{{ project.description }}</p>
+    
+    <div class="meta-list">
+      <div class="meta-item">
+        <span class="label">Status</span>
+        <span class="value status" [class]="project.status.toLowerCase().replace(' ', '-')">{{ project.status }}</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Type</span>
+        <span class="value">{{ project.type }}</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Start Date</span>
+        <span class="value">{{ project.startDate }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-widgets">
+    <div class="widget card">
+      <h3>Quick Links</h3>
+      <div class="link-list">
+        <a routerLink="/scripts">View Script</a>
+        <a routerLink="/schedules/viewer">View Schedule</a>
+        <a href="#">Cast & Crew</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader-container" *ngIf="loading">
+  <div class="spinner"></div>
+</div>

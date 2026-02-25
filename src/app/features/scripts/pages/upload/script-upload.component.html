@@ -1,0 +1,52 @@
+<div class="page-head">
+  <h1>Upload Script</h1>
+  <p>Our AI will automatically breakdown your script into scenes and characters.</p>
+</div>
+
+<div class="upload-container card" 
+     [class.dragging]="isDragging"
+     (dragover)="onDragOver($event)"
+     (dragleave)="onDragLeave()"
+     (drop)="onDrop($event)">
+  
+  <div class="upload-idle" *ngIf="!uploading && !processResult">
+    <div class="upload-icon">[Doc]</div>
+    <h3>Drag and drop your script here</h3>
+    <p>Supports .PDF, .FDX, and .DOCX</p>
+    <input type="file" #fileInput (change)="onFileSelected($event)" hidden>
+    <button class="btn-primary" (click)="fileInput.click()">Select File</button>
+  </div>
+
+  <div class="uploading" *ngIf="uploading">
+    <div class="spinner"></div>
+    <h3>Processing Script...</h3>
+    <p>Analyzing characters, settings, and props.</p>
+  </div>
+
+  <div class="upload-success" *ngIf="processResult">
+    <div class="success-icon">[OK]</div>
+    <h3>Script Analyzed Successfully!</h3>
+    <div class="result-grid">
+      <div class="result-item">
+        <span class="label">Scenes</span>
+        <span class="value">{{ processResult.scenes }}</span>
+      </div>
+      <div class="result-item">
+        <span class="label">Characters</span>
+        <span class="value">{{ processResult.characters }}</span>
+      </div>
+      <div class="result-item">
+        <span class="label">Locations</span>
+        <span class="value">{{ processResult.locations }}</span>
+      </div>
+      <div class="result-item">
+        <span class="label">EST. Pages</span>
+        <span class="value">{{ processResult.estimatedPages | number:'1.0-1' }}</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn-primary" routerLink="/schedules">Generate Schedule</button>
+      <button class="btn-secondary" (click)="processResult = null">Upload Another</button>
+    </div>
+  </div>
+</div>

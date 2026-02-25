@@ -1,0 +1,40 @@
+<div class="pricing-container">
+  <div class="pricing-header">
+    <h1>Simple, Transparent Pricing</h1>
+    <p>Choose the plan that is right for your production.</p>
+  </div>
+
+  <div class="plans-grid">
+    <div class="plan-card" *ngFor="let p of plans" [class.recommended]="p.recommended">
+      <div class="rec-badge" *ngIf="p.recommended">MOST POPULAR</div>
+      <h3>{{ p.name }}</h3>
+      <div class="price">
+        <span class="curr">$</span>
+        <span class="amt">{{ p.price }}</span>
+        <span class="per" *ngIf="p.price !== 'Custom'">/mo</span>
+      </div>
+      <ul class="plan-features">
+        <li *ngFor="let feat of p.features">
+          <span class="check">[v]</span> {{ feat }}
+        </li>
+      </ul>
+      <button class="btn-plan" [class.btn-primary]="p.recommended" [class.btn-secondary]="!p.recommended">
+        Get Started
+      </button>
+    </div>
+  </div>
+
+  <div class="pricing-faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>Can I cancel anytime?</h3>
+        <p>Yes, you can cancel your subscription at any time from your account settings.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What counts as a project?</h3>
+        <p>A project is a single production (short film, feature, commercial) with its own script and schedule.</p>
+      </div>
+    </div>
+  </div>
+</div>

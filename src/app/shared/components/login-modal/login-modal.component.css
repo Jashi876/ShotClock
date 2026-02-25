@@ -1,0 +1,24 @@
+@import '../../../features/auth/pages/login/login.component.css';
+
+.login-modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-header {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.auth-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.auth-form {
+  gap: 16px;
+}
+
+.auth-footer {
+  margin-top: 24px;
+}

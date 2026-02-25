@@ -1,0 +1,30 @@
+.terms-container {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-container h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.last-updated {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+section p {
+  color: var(--secondary-color);
+  line-height: 1.6;
+}

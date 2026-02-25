@@ -1,0 +1,34 @@
+<app-modal title="Log In" [isOpen]="true" (close)="close.emit()">
+  <div class="login-modal-content">
+    <div class="auth-header">
+      <p>Enter your credentials to access your dashboard</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <div *ngIf="error" class="global-error error-msg">
+        {{ error }}
+      </div>
+
+      <div class="form-group">
+        <label for="modal-email">Email Address</label>
+        <input type="email" id="modal-email" formControlName="email" placeholder="jane@example.com">
+      </div>
+
+      <div class="form-group">
+        <div class="label-row">
+          <label for="modal-password">Password</label>
+        </div>
+        <input type="password" id="modal-password" formControlName="password" placeholder="At least 6 characters">
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="loginForm.invalid || loading">
+        <span *ngIf="!loading">Log In</span>
+        <span *ngIf="loading" class="loader"></span>
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      Do not have an account? <a routerLink="/auth/register" (click)="close.emit()">Sign up</a>
+    </div>
+  </div>
+</app-modal>

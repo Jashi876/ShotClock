@@ -1,0 +1,52 @@
+<div class="page-head">
+  <h1>Schedule Generator</h1>
+</div>
+
+<div class="generator-card card" *ngIf="!generating">
+  <div class="gen-header">
+    <div class="gen-icon">[Settings]</div>
+    <h2>AI-Powered Scheduling</h2>
+    <p>We'll analyze your scenes and characters to create the most efficient shoot schedule.</p>
+  </div>
+
+  <div class="gen-options">
+    <div class="option-row">
+      <div class="opt-info">
+        <h3>Optimization Goal</h3>
+        <p>Prioritize location proximity or character availability.</p>
+      </div>
+      <select>
+        <option>Minimize Travel</option>
+        <option>Maximize Character Blocks</option>
+        <option>Balanced</option>
+      </select>
+    </div>
+    
+    <div class="option-row">
+      <div class="opt-info">
+        <h3>Shift Length</h3>
+        <p>Standard production hours per day.</p>
+      </div>
+      <input type="number" value="12" min="1" max="24">
+    </div>
+  </div>
+
+  <button class="btn-primary-large full-width" (click)="onGenerate()">
+    Generate Production Board
+  </button>
+</div>
+
+<div class="generating-state card" *ngIf="generating">
+  <div class="processing-content">
+    <div class="spinner-large"></div>
+    <h2>Crunching the numbers...</h2>
+    <p>Our algorithm is analyzing 42 scenes for optimal sequencing.</p>
+    
+    <div class="progress-steps">
+      <div class="step done">[v] Analyzing character availability</div>
+      <div class="step done">[v] Grouping locations</div>
+      <div class="step active">[...] Sequencing scenes...</div>
+      <div class="step">[ ] Generating stripboard</div>
+    </div>
+  </div>
+</div>

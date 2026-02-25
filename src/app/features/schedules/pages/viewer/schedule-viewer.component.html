@@ -1,0 +1,35 @@
+<div class="page-head">
+  <h1>Production Schedule</h1>
+  <div class="actions">
+    <button class="btn-secondary" routerLink="../generator">Generate New</button>
+    <button class="btn-primary">Export PDF</button>
+  </div>
+</div>
+
+<div class="schedule-container" *ngIf="!loading">
+  <div class="view-switcher">
+    <button class="active">Timeline</button>
+    <button>Calendar</button>
+    <button>List</button>
+  </div>
+
+  <app-timeline [items]="scheduleItems"></app-timeline>
+
+  <div class="schedule-details card">
+    <h3>Upcoming Events</h3>
+    <div class="event-list">
+      <div class="event-item" *ngFor="let item of scheduleItems">
+        <div class="time">{{ item.startTime | date:'shortTime' }}</div>
+        <div class="info">
+          <div class="title">{{ item.title }}</div>
+          <div class="loc">{{ item.location }}</div>
+        </div>
+        <div class="type-tag" [class]="item.type.toLowerCase()">{{ item.type }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loader-container" *ngIf="loading">
+  <div class="spinner"></div>
+</div>

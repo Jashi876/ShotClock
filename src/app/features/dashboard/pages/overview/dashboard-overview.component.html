@@ -1,0 +1,53 @@
+<div class="dashboard-head">
+  <div class="welcome">
+    <h1>Hello, {{ currentUser?.firstName }}</h1>
+    <p>Here is what is happening with your productions today.</p>
+  </div>
+  <div class="actions">
+    <button class="btn-primary">Create New Project</button>
+  </div>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card" *ngFor="let stat of stats">
+    <div class="stat-icon" [style.background-color]="stat.color + '1a'" [style.color]="stat.color">
+      {{ stat.icon }}
+    </div>
+    <div class="stat-content">
+      <div class="stat-label">{{ stat.label }}</div>
+      <div class="stat-value">{{ stat.value }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="dashboard-main">
+  <div class="recent-projects card">
+    <div class="card-header">
+      <h2>Recent Projects</h2>
+      <a routerLink="/projects" class="view-all">View all</a>
+    </div>
+    <div class="project-list">
+      <div class="project-item" *ngFor="let project of recentProjects">
+        <div class="project-info">
+          <div class="project-name">{{ project.name }}</div>
+          <div class="project-meta">{{ project.type }} • Last updated {{ project.date }}</div>
+        </div>
+        <div class="project-status" [class]="project.status.toLowerCase().replace(' ', '-')">
+          {{ project.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quick-actions card">
+    <div class="card-header">
+      <h2>Quick Actions</h2>
+    </div>
+    <div class="action-list">
+      <div class="action-item" *ngFor="let action of quickActions" [routerLink]="action.route">
+        <span class="action-icon">{{ action.icon }}</span>
+        <span class="action-label">{{ action.label }}</span>
+      </div>
+    </div>
+  </div>
+</div>

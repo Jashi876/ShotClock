@@ -1,0 +1,29 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content-area {
+  flex: 1;
+  margin-left: 260px; /* Width of sidebar */
+  padding: 40px;
+  background-color: #f8fafc;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive adjustment if sidebar hides - for future proofing */
+@media (max-width: 968px) {
+  .content-area {
+    margin-left: 0;
+    padding: 24px;
+  }
+}

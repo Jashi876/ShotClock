@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <span class="logo-icon">SC</span>
+      <span class="logo-text">ShotClock</span>
+    </div>
+
+    <div class="navbar-actions">
+      <div class="search-bar" *ngIf="currentUser">
+        <span class="search-icon">S</span>
+        <input type="text" placeholder="Search projects...">
+      </div>
+
+      <div class="user-profile" *ngIf="currentUser">
+        <div class="notification-bell">N</div>
+        <div class="user-info">
+          <span class="user-name">{{ currentUser.firstName }}</span>
+          <div class="avatar">{{ currentUser.firstName[0] }}</div>
+        </div>
+        <button class="btn-logout" (click)="logout()">Logout</button>
+      </div>
+
+      <div class="auth-links" *ngIf="!currentUser">
+        <a routerLink="/pricing" class="nav-link">Pricing</a>
+        <a routerLink="/contact" class="nav-link">Contact</a>
+        <a routerLink="/about" class="nav-link">About</a>
+        <a routerLink="/terms" class="nav-link">Terms</a>
+        <button (click)="openLoginModal()" class="nav-link btn-link">Login</button>
+        <a routerLink="/auth/register" class="btn-primary">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<app-login-modal *ngIf="showLoginModal" (close)="closeLoginModal()"></app-login-modal>

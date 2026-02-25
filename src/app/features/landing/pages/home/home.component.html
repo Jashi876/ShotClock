@@ -1,0 +1,151 @@
+<div class="home-wrapper">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg-container">
+      <div class="mesh-gradient"></div>
+    </div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge fade-in">AI Powered Scheduling</div>
+        <h1 class="fade-in">Produce More,<br>Plan Less.</h1>
+        <p class="fade-in">The first intelligent scheduling platform for professional filmmakers. ShotClock uses AI to turn your scripts into production-ready schedules in seconds.</p>
+        <div class="hero-actions fade-in">
+          <button class="btn-primary-large" routerLink="/auth/register">Start Free Trial</button>
+        </div>
+      </div>
+      <div class="hero-visual fade-in">
+        <div class="dashboard-mockup">
+          <div class="mockup-header">
+            <div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          </div>
+          <div class="mockup-content">
+            <div class="side-nav"></div>
+            <div class="main-view">
+              <div class="stat-grid">
+                <div class="stat-card"></div>
+                <div class="stat-card"></div>
+                <div class="stat-card"></div>
+              </div>
+              <div class="timeline-visual"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Logos -->
+  <section class="trust-bar">
+    <div class="container">
+      <p>Trusted by creators at</p>
+      <div class="logo-grid">
+        <span class="logo">ProductionHub</span>
+        <span class="logo">FilmLocal</span>
+        <span class="logo">SetBound</span>
+        <span class="logo">IndieFilmer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Built for Professional Sets</h2>
+        <p class="section-subtitle">Everything you need to wrap on time and under budget.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" *ngFor="let f of features">
+          <div class="f-icon-container">
+            <span class="f-icon">{{ f.icon }}</span>
+          </div>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">From script to shooting board in three simple steps.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Upload Script</h3>
+          <p>Drag and drop your PDF or Final Draft script. Our AI identifies scenes, characters, and props automatically.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>AI Optimization</h3>
+          <p>Configure your production constraints. ShotClock optimizes your schedule based on location and cast availability.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Export & Sync</h3>
+          <p>Get professional call sheets and DOOD reports. Share real-time updates with your entire crew.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h2>Ready to schedule your next production?</h2>
+          <p>Join thousands of filmmakers using ShotClock to streamline their workflow.</p>
+          <button class="btn-primary-large" routerLink="/auth/register">Start for Free</button>
+        </div>
+        <div class="cta-visual">
+          <!-- Subtle decoration -->
+          <div class="circle c1"></div>
+          <div class="circle c2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="logo">SC ShotClock</div>
+        <p>Intelligent production scheduling for teams of all sizes.</p>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a routerLink="/pricing">Pricing</a>
+          <a href="#">Features</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a routerLink="/about">About Us</a>
+          <a routerLink="/contact">Contact</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a routerLink="/terms">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="copy">(c) 2024 ShotClock AI. </div>
+      <div class="social-links">
+        <span>TW</span>
+        <span>LI</span>
+        <span>IG</span>
+      </div>
+    </div>
+  </footer>
+</div>

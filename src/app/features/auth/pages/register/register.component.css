@@ -1,0 +1,9 @@
+/* reuse common styles from login but add specific ones */
+@import '../login/login.component.css';
+
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}

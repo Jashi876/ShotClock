@@ -1,0 +1,15 @@
+<div class="timeline-wrapper card">
+  <div class="timeline-header">
+    <div class="time-mark" *ngFor="let h of [6, 8, 10, 12, 14, 16, 18, 20, 22]">{{ h }}:00</div>
+  </div>
+  <div class="timeline-grid">
+    <div class="timeline-row" *ngFor="let item of items">
+      <div class="timeline-bar" 
+           [style.left.%]="10" 
+           [style.width.%]="30" 
+           [class]="item.type.toLowerCase()">
+        {{ item.title }}
+      </div>
+    </div>
+  </div>
+</div>
